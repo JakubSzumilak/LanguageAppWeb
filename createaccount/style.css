@@ -1,0 +1,48 @@
+body {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(../img/welcomeBG.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+#RegisterBox {
+    max-width: 30%;
+    max-height: 40%;
+    padding: 2% 5%;
+    margin-top: 10%;
+    margin-left: 30%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#RegisterBox > p {
+    color: white;
+    font-size: 48px;
+    text-align: center;
+}
+
+#RegisterBox > * {
+    margin-top: 2%;
+    padding-left: 2%;
+    height: 5vh;
+    
+}
+
+#RegisterBox > input {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(100, 100, 100);
+    transition: all linear 0.5s;
+    color: white;
+}
+
+#RegisterBox > input::placeholder {
+    color: white;
+}
+
+#RegisterBox > input:hover {
+    border-color: white;
+    
+}
