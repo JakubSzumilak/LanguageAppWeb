@@ -4,51 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language App</title>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
 <!-- main language appi goes here plan: will use php session and ajax/jquery for web actions -->
-    <div>
-    <!-- 
-        mostly self explinatory 
-        1st button clears all fields by the name translation.
-        2nd sends us to a new window(important not same window in the app!!) of dictionary
-        range slider selects how many words of the max 9 our user wants to answer (1 to 9) 
-        submit button spoken about in further comments
-    -->
-        <div> <input type="button" value="clear">Clear data</div>
-        <div> <input type="button" value="dictionary">Show dictionary</div>
-        <div> <input type="range" name="entry" id="entrynum"></div>
-        <div><p>Number of entries <span name="entrynum"> </span></p></div>
-        <div> <button type="submit">check</button></div>
+    <div id="languageapp">
+
+        <div id="navigation">
+            <!-- 
+                mostly self explinatory 
+                1st button clears all fields by the name translation.
+                2nd sends us to a new window(important not same window in the app!!) of dictionary
+                range slider selects how many words of the max 9 our user wants to answer (1 to 9) 
+                submit button spoken about in further comments
+                -->
+            <div><input type="button" class="actionButton" value="cleardata"></div>
+            <div><input type="button" class="actionButton" value="dictionary"></div>
+            <div><input type="range" name="entry" value="9" min="1" max="9" id="entrynum" class="ranges" onchange="updateSpan(this.value)"  /></div>
+            <div><p id="noe">Number of entries <span name="entriesnum" id="entriesnum" > </span></p></div>
+            <div> <button class="actionButton"  type="submit">check</button></div>
+        </div>
+            
+            <div id="targetresponse">
+                <!-- 
+                    Each "translateme" must be cross checked with database if it matches with "translated" item if not send alert about each error 
+                    (from database send correct forms if not left empty) 
+                    if empty only send an alert about leaving empty spaces
+                    -->
+                <span id="translateme1"> </span> <div class="custom_input"><input class="input" type="text" name="translation" id="translated1"> </div>
+                <span id="translateme2"> </span> <div class="custom_input"><input class="input" type="text" name="translation" id="translated2"> </div>
+                <span id="translateme3"> </span> <div class="custom_input"><input class="input" type="text" name="translation" id="translated3"> </div>
+                <span id="translateme4"> </span> <div class="custom_input"><input class="input" type="text" name="translation" id="translated4"> </div>
+                <span id="translateme5"> </span> <div class="custom_input"><input class="input" type="text" name="translation" id="translated5"> </div>
+                <span id="translateme6"> </span> <div class="custom_input"><input class="input" type="text" name="translation" id="translated6"> </div>
+                <span id="translateme7"> </span> <div class="custom_input"><input class="input" type="text" name="translation" id="translated7"> </div>
+                <span id="translateme8"> </span> <div class="custom_input"><input class="input" type="text" name="translation" id="translated8"> </div>
+                <span id="translateme9"> </span> <div class="custom_input"><input class="input" type="text" name="translation" id="translated9"> </div>
+                <!--
+                    Progression bar checks if answers are correct in real time 
+                    (hopefully we'll see if ajax can do it)
+                    upon reaching completion Submit button "check" should put our user into another instance of select.php(TBA)
+                    just a visual thing so user can know if they did something wrong and 'fix' error themselves without help of alerts
+                    -->
+                <div id="progression"></div>
+            </div>
+                    
+                    
+                    
     </div>
 
-    <div>
-    <!-- 
-        Each "translateme" must be cross checked with database if it matches with "translated" item if not send alert about each error 
-        (from database send correct forms if not left empty) 
-        if empty only send an alert about leaving empty spaces
-    -->
-        <div class="responses"><span id="translateme1"> </span> <input type="text" name="translation" id="translated1"></div>
-        <div class="responses"><span id="translateme2"> </span> <input type="text" name="translation" id="translated2"></div>
-        <div class="responses"><span id="translateme3"> </span> <input type="text" name="translation" id="translated3"></div>
-        <div class="responses"><span id="translateme4"> </span> <input type="text" name="translation" id="translated4"></div>
-        <div class="responses"><span id="translateme5"> </span> <input type="text" name="translation" id="translated5"></div>
-        <div class="responses"><span id="translateme6"> </span> <input type="text" name="translation" id="translated6"></div>
-        <div class="responses"><span id="translateme7"> </span> <input type="text" name="translation" id="translated7"></div>
-        <div class="responses"><span id="translateme8"> </span> <input type="text" name="translation" id="translated8"></div>
-        <div class="responses"><span id="translateme9"> </span> <input type="text" name="translation" id="translated9"></div>
-    <!--
-        Progression bar checks if answers are correct in real time 
-        (hopefully we'll see if ajax can do it)
-        upon reaching completion Submit button "check" should put our user into another instance of select.php(TBA)
-        just a visual thing so user can know if they did something wrong and 'fix' error themselves without help of alerts
-    -->
-        <div id="progression"></div>
-    </div>
-
-
-
-
-    
+    <script src="script.js"></script>
 </body>
 </html>
