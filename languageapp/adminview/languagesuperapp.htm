@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language App Administration</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- Administration for language app get access to database either php or ajax-->
-<div>
+<div id="containment">
 <!--
     (TBA)
     2 files:
     -modifyusers.php working ondatabase
     -modifydictionary.php edit words and translations
 -->
-    <div>
-        <!-- send us to the user modification station-->
-    </div>
-    <div>
+    <div id="modifdata">
         <!-- send us to the dictionary modification station-->
+        <input class="btn" value="dictionary">
+    </div>
+    <div id="modifuser">
+        <!-- send us to the user modification station-->
+        <input class="btn" value="user">
     </div>
 </div>  
+<script src="script.js"></script>
 </body>
 </html>

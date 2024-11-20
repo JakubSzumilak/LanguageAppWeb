@@ -1,0 +1,96 @@
+body {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+        url(../../img/welcomeBG.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+#containment{
+    max-width: 60%;
+    max-height: 60%;
+    min-height: fit-content;
+    padding: 2% 5%;
+    margin-top: 10%;
+    margin-left: 15%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 4px black solid;
+    border-radius: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    color: white;
+    justify-content: center;
+}
+
+#modifdata { 
+    grid-area: 1 / 1 / 2 / 2; 
+    min-height: 200px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+#modifuser { 
+    grid-area: 1 / 2 / 2 / 3; 
+    min-height: 200px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+} 
+.btn {
+    background: #34d9d1;
+    background-image: -webkit-linear-gradient(top, #34d9d1, #2b0080);
+    background-image: -moz-linear-gradient(top, #34d9d1, #2b0080);
+    background-image: -ms-linear-gradient(top, #34d9d1, #2b0080);
+    background-image: -o-linear-gradient(top, #34d9d1, #2b0080);
+    background-image: linear-gradient(to bottom, #34d9d1, #2b0080);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Georgia;
+    color: #d7e0da;
+    font-size: 30px;
+    padding: 15px 20px 15px 20px;
+    border: solid #2d472d 6px;
+    text-decoration: none;
+    text-align: center;
+    justify-self: center;
+    /* possibly works just doesnt work on firefox fork i work with on my linux laptop*/
+    user-select: none; /* Standard property */
+    -webkit-user-select: none; /* For WebKit (Chrome, Safari, etc.) */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer/Edge */
+  }
+  
+  .btn:hover {
+    background: #20c7ab;
+    background-image: -webkit-linear-gradient(top, #20c7ab, #3d11b8);
+    background-image: -moz-linear-gradient(top, #20c7ab, #3d11b8);
+    background-image: -ms-linear-gradient(top, #20c7ab, #3d11b8);
+    background-image: -o-linear-gradient(top, #20c7ab, #3d11b8);
+    background-image: linear-gradient(to bottom, #20c7ab, #3d11b8);
+    text-decoration: none;
+    /* possibly works just doesnt work on firefox fork i work with on my linux laptop*/
+    user-select: none; /* Standard property */
+    -webkit-user-select: none; /* For WebKit (Chrome, Safari, etc.) */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer/Edge */    
+  }
+  .btn:active{
+    border:none;
+    /* possibly works just doesnt work on firefox fork i work with on my linux laptop*/
+    user-select: none; /* Standard property */
+    -webkit-user-select: none; /* For WebKit (Chrome, Safari, etc.) */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer/Edge */
+  }
