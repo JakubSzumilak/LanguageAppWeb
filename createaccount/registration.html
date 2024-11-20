@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create account</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="registration.js"></script>
+    <script src="../verifier.js"></script>
+    <script>
+        window.addEventListener('load', () => {verify("../checker.php", "../languageapp/userview/languageapp.html")})
+        window.addEventListener('focus', () => {verify("../checker.php", "../languageapp/userview/languageapp.html")})
+    </script>
+    
 </head>
 <body>
     <!-- regular php registration to database-->
@@ -16,11 +23,8 @@
         <input type="password" name="password" id="password" placeholder="password" />
         <input type="password" name="passwordconfirm" id="passwordconfirm" placeholder="confirm password" />
         <input type="button" id="continueButton" value="Continue" />
+        <div id="actionResultMessage"></div>
     </div>
-
-    <script>
-        
-    </script>
 
 
 </body>

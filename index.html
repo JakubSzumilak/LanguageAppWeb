@@ -6,8 +6,14 @@
     <title>LanguageApp - Welcome</title>
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.7.1.min.js"></script>
+    <script src="verifier.js"></script>
+    <script>
+        window.addEventListener('load', () => {verify("checker.php", "languageapp/userview/languageapp.html")})
+        window.addEventListener('focus', () => {verify("checker.php", "languageapp/userview/languageapp.html")})
+    </script>
 </head>
 <body>
+    
     <div id="loginBox">
         <p>Sign in</p>
         <input type="text" name="username" id="username" placeholder="username" />

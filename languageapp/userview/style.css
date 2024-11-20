@@ -218,3 +218,11 @@ body {
     text-align: center;
     color: #CACACA;
 }
+
+#userData
+{
+    position: fixed;
+    right: 5vmin;
+    bottom: 5vmin;
+    color: white;
+}

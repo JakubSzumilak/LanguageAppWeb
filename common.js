@@ -16,16 +16,17 @@ $(document).ready(function() {
                 password: $("#password").val()
             },
             success: function(response) {
-                if (response == 'true') {
-                    // login successful
-                    msgBox.css("color", "yellowgreen");
-                    msgBox.text("Logged in successfully!")
-                    $("#loginBox").fadeOut("slow");
-                    setTimeout('window.location.href = "languageapp/userview/languageapp.html";', 1500)
-                } else {
+                if (response == 'false') {
                     // Login failed
                     msgBox.css("color", "red");
                     msgBox.text("Wrong username or password")
+                } else {
+                    // login successful
+                    msgBox.css("color", "yellowgreen");
+                    msgBox.text("Logged in successfully!")
+                    sessionStorage.setItem('userID', response);
+                    $("#loginBox").fadeOut("slow");
+                    setTimeout('window.location.href = "languageapp/userview/languageapp.html";', 1500)
                 }
             },
             error: function(xhr, status, error) {

@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language App</title>
     <link rel="stylesheet" href="style.css">
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="../../verifier.js"></script>
+    <script src="userDataTracker.js"></script>
+    <script>
+        window.addEventListener('load', () => {verify("../../checker.php", "../../index.html")})
+        window.addEventListener('focus', () => {verify("../../checker.php", "../../index.html")})
+    </script>
     
 </head>
 <body>
@@ -53,6 +60,7 @@
                     
                     
     </div>
+    <div id="userData">User data here</div>
 
     <script src="script.js"></script>
 </body>
