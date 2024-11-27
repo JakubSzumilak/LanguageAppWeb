@@ -8,16 +8,18 @@
     <script src="../../jquery-3.7.1.min.js"></script>
     <script src="../../verifier.js"></script>
     <script src="userDataTracker.js"></script>
+    <script src="app.js"></script>
     <script>
         window.addEventListener('load', () => {verify("../../checker.php", "../../index.html")})
         window.addEventListener('focus', () => {verify("../../checker.php", "../../index.html")})
+        loadTerms(1,3)
     </script>
     
 </head>
 <body>
 <!-- main language appi goes here plan: will use php session and ajax/jquery for web actions -->
     <div id="languageapp">
-
+    <div id="notificationBox">abc</div>
         <div id="navigation">
             <!-- 
                 mostly self explinatory 
@@ -30,7 +32,7 @@
             <div><input type="button" class="actionButton" value="dictionary"></div>
             <div><input type="range" name="entry" value="9" min="1" max="9" id="entrynum" class="ranges" onchange="updateSpan(this.value)"  /></div>
             <div><p id="noe">Number of entries <span name="entriesnum" id="entriesnum" > </span></p></div>
-            <div> <button class="actionButton"  type="submit">check</button></div>
+            <div> <button id="checkButton" class="actionButton"  type="submit">check</button></div>
         </div>
             
             <div id="targetresponse">

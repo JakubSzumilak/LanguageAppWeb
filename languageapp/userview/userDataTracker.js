@@ -7,6 +7,7 @@ $.ajax({
     success: function(response, statusText) {
         seconds = response['timeSpent'];
         setInterval(addTime, 1000);
+        setInterval(autoSave, 60000);
     },
     error: function(xhr, status, error) {
         // Handle AJAX error here
@@ -14,6 +15,7 @@ $.ajax({
         return false;
     }
 })
+
 });
 
 
@@ -54,5 +56,29 @@ function addTime()
 
 function autoSave()
 {
-    // to do later
+    $('#notificationBox').html('Saving data...')
+    $.ajax({
+        type: "POST",
+        url: "userDataSaver.php",
+        data: {
+            time: seconds,
+        },
+        success: function(response) {
+            if (response === 'success')
+            {
+                $('#notificationBox').css('color', 'yellowgreen');
+                $('#notificationBox').html('Data saved successfully!');
+            } else {
+                $('#notificationBox').css('color', 'red');
+                $('#notificationBox').html('An error has occurred while saving data - ' + response.toString());
+            }
+            setTimeout(() => {
+                $('#notificationBox').css('color', 'white');
+                $('#notificationBox').html('');
+            }, 3000);
+        },
+        error: function(xhr, status, error) {
+            alert("AJAX error has occurred, please try again")
+        }
+    });
 }
