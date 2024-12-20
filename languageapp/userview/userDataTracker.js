@@ -1,4 +1,5 @@
 let seconds = 0;
+
 $(document).ready(function() {
 $.ajax({
     type: 'POST',
@@ -61,7 +62,7 @@ function autoSave()
         type: "POST",
         url: "userDataSaver.php",
         data: {
-            time: seconds,
+            time: seconds
         },
         success: function(response) {
             if (response === 'success')
@@ -82,3 +83,4 @@ function autoSave()
         }
     });
 }
+

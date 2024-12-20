@@ -1,0 +1,12 @@
+.userMenuBtn {
+    width: 15vw;
+    height: 15vw;
+    border: 2px solid white;
+    line-height: 15vw;
+    text-align: center;
+    user-select: none;
+}
+
+.userMenuBtn:hover {
+    background-color: #444444;
+}

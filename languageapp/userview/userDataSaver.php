@@ -14,9 +14,21 @@ if (!isset($_SESSION['userID'])) {
 
 include_once("../../connection.php");
 
-$time = $_POST['time'];
 $id = $_SESSION['userID'];
 
+if (isset($_POST['correct'])) {
+    // Saving full user data
+    $sql = "UPDATE users set totalCorrect = totalCorrect + :correct, totalMistakes = totalMistakes + :mistakes, totalRounds = totalRounds + :rounds WHERE ID=:id";
+    $query = $conn->prepare($sql);
+    $query->bindParam(':correct', $_POST['correct'], PDO::PARAM_INT);
+    $query->bindParam(':mistakes', $_POST['mistakes'], PDO::PARAM_INT);
+    $query->bindParam(':rounds', $_POST['rounds'], PDO::PARAM_INT);
+    $query->bindParam(':id', $id, PDO::PARAM_INT);
+    $query->execute();
+    echo 'success';
+    return;
+}
+$time = $_POST['time'];
 $sql = "UPDATE users set timeSpent = :time WHERE ID=:id";
 $query = $conn->prepare($sql);
 $query->bindParam(':time', $time, PDO::PARAM_INT);

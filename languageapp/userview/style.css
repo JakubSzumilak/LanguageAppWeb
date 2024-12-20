@@ -226,3 +226,29 @@ body {
     bottom: 5vmin;
     color: white;
 }
+
+.correct {
+    background-color: teal;
+    border: 1px solid greenyellow;
+    pointer-events: none;
+    user-select: none;
+}
+
+#dictionaryBox {
+    position: fixed;
+    left: 40vw;
+    top: 30vh;
+    min-width: 20vw;
+    max-height: 40vh;
+    background-color: #323232;
+    border-radius: 5px;
+    border: 4px solid #732DED;
+    color: white;
+    overflow-y: scroll;
+    z-index: 5;
+}
+
+#dictionaryTerms, #dictionaryTranslations {
+    min-width: 50%; 
+    text-align: center;
+}

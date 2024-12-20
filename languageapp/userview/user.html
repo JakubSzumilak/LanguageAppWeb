@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="user.css">
+    <script type="text/javascript" src="../../jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="../../verifier.js"></script>
+    <script>
+        window.addEventListener('load', () => {verify("../../checker.php", "../../index.html")})
+        window.addEventListener('focus', () => {verify("../../checker.php", "../../index.html")})
+    </script>
+    
+</head>
+<body>
+    <div id="languageapp">
+    <div id="notificationBox"></div>
+        <div id="navigation">
+            <h1>Hello, user!</h1>
+            <h2>Rounds played: </h2>
+            <div id="ronuds">0</div>
+            <h2>Total correct: </h2>
+            <div id="correct">0</div>
+            <h2>Total mistakes: </h2>
+            <div id="mistakes">0</div>
+            <h2>Correct Percentage: </h2>
+            <div id="percentage">0.00%</div>
+        </div>
+            
+        <div id="targetresponse" style="display: flex; flex-wrap: wrap;">
+            <div id="changePassword" class="userMenuBtn">Change password</div>
+            <div id="changeLogin" class="userMenuBtn">Change login</div>
+            <div id="resetProgress" class="userMenuBtn">Reset progress</div>
+            <div id="deleteAccount" class="userMenuBtn">Delete account</div>
+        </div>
+                    
+    </div>
+</body>
+</html>
